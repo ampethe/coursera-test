@@ -9,6 +9,7 @@
         $scope.lunchArray = [];
         $scope.lunchCount = 0;
         $scope.msgLunch = "";
+        $scope.lunchString = "";
         
         $scope.checkLunch = function () {
             if ($scope.lunchString == "") {

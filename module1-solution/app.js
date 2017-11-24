@@ -20,7 +20,7 @@
             }
             
             if ($scope.lunchString == "") {
-                $scope.msgLunch = "";                
+                $scope.msgLunch = "Please enter data first";                
             }
         };
     }

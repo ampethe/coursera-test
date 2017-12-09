@@ -67,7 +67,7 @@
                                 }
                             }
 
-                            console.log(narrowedItems);
+                            //console.log(narrowedItems);
 
                             //return processed items
                             return narrowedItems;

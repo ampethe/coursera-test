@@ -25,7 +25,7 @@
                 
         narrow.narrowList = function () {
             narrow.found = MenuSearchService.getMatchedMenuItems(narrow.itemName);  
-            console.log(narrow.found);
+            //console.log(narrow.found);
             if (narrow.itemName === undefined || narrow.found === undefined || narrow.found.length == 0) {
                 narrow.nothingMessage = "Nothing found";
             } else {
@@ -67,7 +67,7 @@
                                 }
                             }
 
-                            //console.log(narrowedItems);
+                            console.log(narrowedItems);
 
                             //return processed items
                             return narrowedItems;

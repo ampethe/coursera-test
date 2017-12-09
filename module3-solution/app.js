@@ -59,7 +59,7 @@
                             //console.log(foundItems['menu_items']);
                             var foundMenuItems = foundItems['menu_items'];
                             for (var i = 0; i < foundMenuItems.length; i++) {
-                                //console.log(foundMenuItems[i]);
+                                console.log(foundMenuItems[i]);
 
                                 if (foundMenuItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
 

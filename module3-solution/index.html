@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html ng-app='ShoppingListDirectiveApp'>
+<html ng-app='NarrowItDownApp'>
   <head>
     <meta charset="utf-8">
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles.css">
-    <title>Directives with Isolate Scope and '&'</title>
+    <title>Narrow It Down</title>
   </head>
   <body>
-    <h1>Directives with Isolate Scope and '&'</h1>
+    <h1>Narrow It Down</h1>
 
     <!-- LIST #1 - unlimited items -->
-    <div id="list" ng-controller='ShoppingListController as list'>
+    <div id="list" ng-controller='NarrowItDownController as list'>
       <input type="text" ng-model="list.itemName" placeholder="item name">
-      <input type="text" ng-model="list.itemQuantity" placeholder="quantity">
-      <button ng-click="list.addItem();">Add Item</button>
-      <span>{{ list.lastRemoved }}</span>
-
-      <shopping-list
+      <button ng-click="list.narrowList();">Narrow It Down For Me!</button>
+      
+        <menu-list
         items="list.items"
         title="{{list.title}}"
-        bad-remove="list.removeItem"
-        on-remove="list.removeItem(index)"></shopping-list>
+        on-remove="list.removeItem(index)"></menu-list>
 
     </div>
 

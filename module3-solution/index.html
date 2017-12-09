@@ -15,11 +15,10 @@
       <input type="text" ng-model="list.itemName" placeholder="item name">
       <button ng-click="list.narrowList();">Narrow It Down For Me!</button>
       
-        <menu-list
-        items="list.items"
-        title="{{list.title}}"
-        on-remove="list.removeItem(index)"></menu-list>
-
+            <found-items
+            found="list.found"
+            on-remove="list.removeItem(index)"></found-items>
+        <div class="error">{{list.nothingMessage}}</div>
     </div>
 
   </body>

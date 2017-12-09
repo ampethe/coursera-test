@@ -26,11 +26,11 @@
         narrow.narrowList = function () {
             narrow.found = MenuSearchService.getMatchedMenuItems(narrow.itemName);  
             console.log(narrow.found);
-            if (narrow.itemName === undefined || narrow.found === undefined || narrow.found.length == 0) {
-                narrow.nothingMessage = "Nothing found";
-            } else {
-                narrow.nothingMessage = "";
-            }
+            //if (narrow.itemName === undefined || narrow.found === undefined || narrow.found.length == 0) {
+            //    narrow.nothingMessage = "Nothing found";
+            //} else {
+            //    narrow.nothingMessage = "";
+            //}
         }
         
         narrow.removeItem = function (itemIndex) {
@@ -47,7 +47,7 @@
         
         service.getMatchedMenuItems = function (searchTerm) {
             
-            if (searchTerm !== undefined && searchTerm != "") {
+            //if (searchTerm !== undefined && searchTerm != "") {
             
                 var response = $http({
                   method: "GET",
@@ -75,9 +75,9 @@
 
                 return response;
             
-            } else {
-                return narrowedItems;
-            }
+            //} else {
+            //    return narrowedItems;
+            //}
         };
         
         service.removeItem = function (itemIndex) {

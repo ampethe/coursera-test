@@ -28,7 +28,7 @@
             
             promise.then(function (response) {
                 var allMenuItems = response.data;
-                console.log(allMenuItems);
+                console.log(allMenuItems[0]);
             }).catch(function (error) {
                 console.log(error);
             });

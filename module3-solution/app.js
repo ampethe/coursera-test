@@ -30,7 +30,7 @@
                 var allMenuItems = response.data["menu_items"];
                 //console.log(allMenuItems);
                 
-                var matchedMenuItems = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
+                narrow.found = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
                 console.log(matchedMenuItems);
             }).catch(function (error) {
                 console.log(error);

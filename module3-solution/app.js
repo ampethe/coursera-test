@@ -24,10 +24,16 @@
         var narrow = this;
                 
         narrow.narrowList = function () {
-            MenuSearchService.getMatchedMenuItems(narrow.itemName).then (function (list) {
-                narrow.found = list;
-            });  
-            console.log(narrow.found);
+            var promise = MenuSearchService.getMatchedMenuItems(narrow.itemName);
+            
+            promise.then(function (response) {
+                var allMenuItems = response.data;
+                console.log(allMenuItems);
+            }).catch(function (error) {
+                console.log(error);
+            });
+              
+            //console.log(narrow.found);
             //if (narrow.itemName === undefined || narrow.found === undefined || narrow.found.length == 0) {
             //    narrow.nothingMessage = "Nothing found";
             //} else {
@@ -47,40 +53,46 @@
         var service = this;
         var narrowedItems = [];
         
-        service.getMatchedMenuItems = function (searchTerm) {
+        service.getMenuItems = function () {
             
             //if (searchTerm !== undefined && searchTerm != "") {
             
                 var response = $http({
                   method: "GET",
                   url: (ApiBasePath + "/menu_items.json")
-                }).then(function (response) {
+                });
+            
+            return response;
+            
+            //.then(function (response) {
                             //process result and only keep items that matched
-                            var foundItems = response.data;
+            //                var foundItems = response.data;
 
                             //console.log(foundItems['menu_items']);
-                            var foundMenuItems = foundItems['menu_items'];
-                            for (var i = 0; i < foundMenuItems.length; i++) {
+            //                var foundMenuItems = foundItems['menu_items'];
+            //                for (var i = 0; i < foundMenuItems.length; i++) {
                                 //console.log(foundMenuItems[i]);
 
-                                if (foundMenuItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
+            //                    if (foundMenuItems[i].description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1) {
 
-                                    narrowedItems.push(foundMenuItems[i]);
-                                }
-                            }
+            //                        narrowedItems.push(foundMenuItems[i]);
+            //                    }
+            //                }
 
-                            console.log(narrowedItems);
+            //                console.log(narrowedItems);
 
                             //return processed items
-                            return narrowedItems;
-                        });
+            //                return narrowedItems;
+            //            });
 
-                return response;
+                
             
             //} else {
             //    return narrowedItems;
             //}
         };
+        
+        //service.getMatchedMenuItems = function () {
         
         service.removeItem = function (itemIndex) {
             narrowedItems.splice(itemIndex, 1);

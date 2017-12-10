@@ -31,7 +31,7 @@
                 //console.log(allMenuItems);
                 
                 narrow.found = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
-                console.log(matchedMenuItems);
+                //console.log(matchedMenuItems);
             }).catch(function (error) {
                 console.log(error);
             });

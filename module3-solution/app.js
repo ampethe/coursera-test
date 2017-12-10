@@ -24,7 +24,7 @@
         var narrow = this;
                 
         narrow.narrowList = function () {
-            var promise = MenuSearchService.getMatchedMenuItems(narrow.itemName);
+            var promise = MenuSearchService.getMenuItems(narrow.itemName);
             
             promise.then(function (response) {
                 var allMenuItems = response.data;

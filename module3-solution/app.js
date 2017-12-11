@@ -4,34 +4,19 @@
     angular.module('NarrowItDownApp', [])
     .controller('NarrowItDownController', NarrowItDownController)
     .service('MenuSearchService', MenuSearchService)
-    //.directive('foundItems', FoundItems)
-    .directive('shoppingList', ShoppingListDirective)
+    .directive('foundItems', FoundItems)
     .constant('ApiBasePath', "https://davids-restaurant.herokuapp.com");
     
-    //function FoundItems () {
-    //    var ddo = {
-    //        templateUrl: 'https://ampethe.github.io/coursera-test/module3-solution/foundItem.html',
-    //        scope: {
-    //          found: '<',
-    //          onRemove: '&'
-    //        }
-    //    };
-    //    
-    //    return ddo;
-    //}
-    
-    function ShoppingListDirective() {
-      var ddo = {
-        templateUrl: 'shoppingList.html',
-        scope: {
-          items: '<',
-          myTitle: '@title',
-          badRemove: '=',
-          onRemove: '&'
-        }
-      };
-
-      return ddo;
+    function FoundItems () {
+        var ddo = {
+            templateUrl: 'https://ampethe.github.io/coursera-test/module3-solution/foundItem.html',
+            scope: {
+              found: '<',
+              onRemove: '&'
+            }
+        };
+        
+        return ddo;
     }
     
     NarrowItDownController.$inject = ['MenuSearchService'];
@@ -45,8 +30,7 @@
                 var allMenuItems = response.data["menu_items"];
                 //console.log(allMenuItems);
                 
-                //narrow.found = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
-                narrow.items = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
+                narrow.found = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
                 //console.log(matchedMenuItems);
             }).catch(function (error) {
                 console.log(error);

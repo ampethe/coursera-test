@@ -45,7 +45,8 @@
                 var allMenuItems = response.data["menu_items"];
                 //console.log(allMenuItems);
                 
-                narrow.found = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
+                //narrow.found = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
+                narrow.items = MenuSearchService.getMatchedMenuItems(allMenuItems, narrow.itemName);
                 //console.log(matchedMenuItems);
             }).catch(function (error) {
                 console.log(error);

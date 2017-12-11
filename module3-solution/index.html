@@ -15,7 +15,13 @@
       <input type="text" ng-model="list.itemName" placeholder="item name">
       <button ng-click="list.narrowList();">Narrow It Down For Me!</button>
       
-            <found-items found="list.found" on-remove="list.removeItem(index)"></found-items>
+            <!--<found-items found="list.found" on-remove="list.removeItem(index)"></found-items>-->
+        
+        <shopping-list
+        items="list.items"
+        title="{{list.title}}"
+        bad-remove="list.removeItem"
+        on-remove="list.removeItem(index)"></shopping-list>
         
         <!--<ul><li ng-repeat="item in list.found">{{ item.name }}, {{ item.short_name }}, {{ item.description }}<button ng-click="list.onRemove({index: $index});">Remove Item</button></li></ul>-->
         

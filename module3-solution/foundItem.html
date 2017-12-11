@@ -1,7 +1,17 @@
-<ul>
+<!--<ul>
   <li ng-repeat="item in list.found">
     {{ item.name }}, {{ item.short_name }}, {{ item.description }}
     <button ng-click="list.onRemove({index: $index});">Remove Item</button>
   </li>
 </ul>
-<div class="error" ng-if="list.cookiesInList()">Nothing Found</div>
+<div class="error" ng-if="list.cookiesInList()">Nothing Found</div>-->
+
+<h3>Title: {{ list.myTitle }}</h3>
+<ol>
+  <li ng-repeat="item in list.items">
+    {{ item.quantity }} of {{ item.name }}
+    <button ng-click="list.badRemove($index);">Bad Remove Item</button>
+    <button ng-click="list.onRemove({index: $index});">Remove Item</button>
+  </li>
+</ol>
+<div class="error" ng-if="list.cookiesInList()">WARNING! WARNING! COOKIES DETECTED!</div>

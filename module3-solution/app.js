@@ -9,10 +9,11 @@
     
     function FoundItems () {
         var ddo = {
-        templateUrl: 'foundItem.html',
+        //templateUrl: 'foundItem.html',
+        template: '<ul><li ng-repeat="item in list.found.found">{{ item.name }}, {{ item.short_name }}, {{ item.description }}<button ng-click="list.onRemove({index: $index});">Remove Item</button></li></ul>',    
             scope: {
-              found: '<',
-              onRemove: '&'
+              found: '<foundList',
+              onRemove: '&onRemove'
             }
         };
         

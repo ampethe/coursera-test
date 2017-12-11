@@ -9,7 +9,7 @@
     
     function FoundItems () {
         var ddo = {
-        templateUrl: 'foundItem.html',
+        templateUrl: 'https://ampethe.github.io/coursera-test/module3-solution/foundItem.html',
         //template: '<ul><li ng-repeat="item in list.found">{{ item.name }}, {{ item.short_name }}, {{ item.description }}<button ng-click="list.onRemove({index: $index});">Remove Item</button></li></ul>',    
             scope: {
               found: '<',
